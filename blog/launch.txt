@@ -1,0 +1,15 @@
+Welcome to my new blog, rising from the scattered ashes of my old blog!
+
+
+My old blog has been down for a few years.  I maintained it myself, and something went wrong during an upgrade, and the blog went down.  And it's been down ever since.  As much as I like the idea of taking care of these things myself, I decided I didn't want that hassle.
+
+And so, I'm letting the fine people at blogger handle it for me.  I realize this means that I don't technically own my data, but I don't expect to need to own my data anyway.  This is more of a semiprofessional blog than a personal one.  If you want to see all of my public personal bloggings (not that there's much of it), you can go find me on Facebook.  Here, you'll see more of a public professional persona.
+
+
+In coordination with my new professional public persona here, I've also created a new public github repository here:  https://github.com/EdwardTonai/public
+
+
+Pretty much everything that goes up there will be commented on here.
+
+
+Let's go!
