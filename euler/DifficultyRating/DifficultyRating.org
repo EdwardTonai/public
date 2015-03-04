@@ -1,0 +1,15 @@
+* Project Euler Difficulty Rating, a scraping project
+** Introduction
+I like the new difficulty rating feature on Project Euler. One issue I have with it is it is not easy for me to look at the problems my friends have solved and find out which are the most difficult.  I could just wait for that functionality to be added, and I'm guessing it will be, but until that time I'll get the information myself.
+
+This is also a project to mess around with web scraping in Python.  I've toyed with scraping before, but not much.  Additionally, this will give me a little introduction for my next little project (the Canada thing).
+
+** Previous Notes
+It looks like last time I was using BeautifulSoup (bs4).
+
+** New notes
+
+I'll start with BeautifulSoup and Mechanize to do this work.  I may only need Mechanize to deal with the forms.
+
+I need to think about how to make the information look OK.
+Maybe I can just end up creating a list.  Name of friend, list of problems solved, sorted by difficulty.
