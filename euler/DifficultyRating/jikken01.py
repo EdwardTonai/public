@@ -9,6 +9,8 @@ from bs4 import BeautifulSoup
 
 import xml.etree.ElementTree as ET
 
+import operator
+
 # The following opens Project Euler and reads it.
 # Here I verified that it opened the home page for not signed in people
 def OpenEuler():
@@ -127,6 +129,7 @@ def GetFriends(br):
 
     print "Listing friends:"
     print "-----------------"
+    friends = []
     #records = [] # store all of the records in this list
     for row in friendTable.find_all('tr'):
         if row.table is None:
@@ -134,6 +137,8 @@ def GetFriends(br):
                 #print row.a
                 line = ET.fromstring(str(row.a))
                 print line.text
+                friends.append(line.text)
+    return friends
 
 # At this point, what am I thinking?  I have the user names.
 # Next, I need the list of problems solved.
@@ -151,7 +156,7 @@ def GetFriendProgress(username, br):
 # Given a username and a browser (already logged in to Project Euler)
 # Return a string list of all solved problems by that user
 def GetFriendSolved(username, br):
-    print "-- Getting progress for : ", username
+    #print "-- Getting progress for : ", username
     url = "https://projecteuler.net/progress=" + username
     response = br.open(url)
     #print response.read()
@@ -164,10 +169,80 @@ def GetFriendSolved(username, br):
     solvedProblems = [x.encode('ascii') for x in solvedProblems]
     return solvedProblems
 
+# Now, go through all of the archived pages and get the difficulty rating of every problem
 
+def GetProblemRatings(br):
+    print "-- Going to Archives page"
+    url = "https://projecteuler.net/archives"
+    response = br.open(url)
+    soup = BeautifulSoup(br.response().read())
+    #print (soup.prettify())
+    pagination = soup.find('div','pagination')
+    pages = len(pagination.find_all('a'))
+
+    ratings = ['-1'] * (pages * 50)
+    
+    #table = soup.find_all('table','grid').tbody.find_all('tr')
+    table = soup.find_all('tr')
+    
+    for row in table:
+        idNumber = row.find('td','id_column')
+        rating = row.find('td','difficulty_column')
+        if idNumber is not None and rating is not None:
+            difficultyRating = rating.text.split(' ')[2]
+            difficultyRating = difficultyRating[:difficultyRating.find("%")]
+            ratings[int(idNumber.text)] = difficultyRating
+
+    for i in range(2,pages+1):
+        url = "https://projecteuler.net/archives;page=" + str(i)
+        response = br.open(url)
+        soup = BeautifulSoup(br.response().read())
+        
+        table = soup.find_all('tr')
+        
+        for row in table:
+            idNumber = row.find('td','id_column')
+            rating = row.find('td','difficulty_column')
+            if idNumber is not None and rating is not None:
+                difficultyRating = rating.text.split(' ')[2]
+                difficultyRating = difficultyRating[:difficultyRating.find("%")]
+                ratings[int(idNumber.text)] = difficultyRating
+    ratings = [x.encode('ascii') for x in ratings]
+    return ratings
+    
+# http://stackoverflow.com/questions/613183/sort-a-python-dictionary-by-value        
+    
+# So what do I do now?
+# 1 - Get all the problem ratings
+# 2 - Get Anthony's problems as a list
+# 3 - Create a dictionary with the information
+# 4 - Generate a sorted list from the dictionary
+
+def GetUserDifficulty(ratings, problems):
+    allRatings = {}
+    for problem in problems:
+        allRatings[problem] = int(ratings[int(problem)])
+    return allRatings
+
+def GetFriendDifficulty(br):
+    ratings = GetProblemRatings(br)
+    friends = GetFriends(br)
+    for friend in friends:
+        problems = GetFriendSolved(friend,br)
+        solvedRatings = GetUserDifficulty(ratings, problems)
+        sortedSolved = sorted(solvedRatings.items(), key=operator.itemgetter(1))
+        sortedSolved.reverse()
+        print friend
+        print sortedSolved
 
 br = mechanize.Browser()
 print "Use EulerSignIn(username, password, br)"
-print "Then ExamineFriends(br)"
+print "Then run GetFriendDifficulty(br)"
+# ratings = GetProblemRatings(br)
+# problems = GetFriendSolved('afairchild',br)
+# solvedRatings = GetUserDifficulty(ratings, problems)
+# sortedSolved = sorted(solvedRatings.items(), key=operator.itemgetter(1))
+# sortedSolved.reverse()
+
 
 
