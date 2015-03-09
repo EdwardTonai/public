@@ -235,6 +235,60 @@ def GetFriendDifficulty(br):
         print friend
         print sortedSolved
 
+def GetTupleOfRow(row):
+    idNumber = row.find('td','id_column')
+    rating = row.find('td','difficulty_column')
+    columns = row.find_all('td')
+    if idNumber is not None and rating is not None:
+        #print columns[1].text
+        title = columns[1].text.replace(u"\u2018","'").replace(u"\u2019","'")
+        #print title
+        solved = columns[2].text
+        #print solved
+        difficultyRating = rating.text.split(' ')[2]
+        difficultyRating = difficultyRating[:difficultyRating.find("%")]
+        problem = (int(idNumber.text),title,int(solved),int(difficultyRating))
+        print problem
+        return problem
+    return None
+
+# Return a list of tuples
+# The list is the list of all problems
+# Each tuple contains the ID, title, solvedBy, and difficulty
+
+def GetArchivedProblems(br):
+    print "-- Going to Archives page"
+    url = "https://projecteuler.net/archives"
+    response = br.open(url)
+    soup = BeautifulSoup(br.response().read())
+    #print (soup.prettify())
+    pagination = soup.find('div','pagination')
+    pages = len(pagination.find_all('a'))
+
+    problems = []
+
+    #table = soup.find_all('table','grid').tbody.find_all('tr')
+    table = soup.find_all('tr')
+    
+    for row in table:
+        problem = GetTupleOfRow(row)
+        if problem is not None:
+            problems.append(problem)
+
+    for i in range(2,pages+1):
+        url = "https://projecteuler.net/archives;page=" + str(i)
+        response = br.open(url)
+        soup = BeautifulSoup(br.response().read())
+        
+        table = soup.find_all('tr')
+        
+
+        for row in table:
+            problem = GetTupleOfRow(row)
+            if problem is not None:
+                problems.append(problem)
+    return problems
+
 br = mechanize.Browser()
 print "Use EulerSignIn(username, password, br)"
 print "Then run GetFriendDifficulty(br)"
