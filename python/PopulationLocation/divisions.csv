@@ -1,0 +1,291 @@
+Toronto,ON,2615060,Toronto
+Metro Vancouver,BC,2313328,Burnaby
+Montreal,QC,1886481,Montreal
+Division No. 6,AB,1311022,Calgary
+Peel[N 3],ON,1296814,Brampton
+Division No. 11,AB,1203115,Edmonton
+York,ON,1032524,Newmarket
+Ottawa,ON,883391,Ottawa
+Division No. 11,MB,666832,Winnipeg
+Durham,ON,608124,Whitby
+"""Quebec City""[N 4]",QC,551902,"""Quebec City""[N 4]"
+Hamilton,ON,519949,Hamilton
+Waterloo,ON,507096,Kitchener
+Halton[N 3],ON,501669,Milton
+Simcoe,ON,446063,Barrie
+Middlesex,ON,439151,London
+Niagara,ON,431346,Thorold
+Laval,QC,401553,Laval
+Longueuil,QC,399097,Longueuil
+Halifax,NS,390328,Halifax
+Essex,ON,388782,Windsor
+Capital,BC,359991,Victoria
+Fraser Valley,BC,277593,Abbotsford
+Division No. 11,SK,271170,Saskatoon
+Gatineau,QC,265349,Gatineau
+Division No. 1,NL,262410,St. John's
+Division No. 6,SK,237746,Regina
+Wellington County,ON,208360,Guelph
+Division No. 8,AB,189243,Red Deer
+Central Okanagan,BC,179839,Kelowna
+Le Saguenay-et-son-Fjord,QC,165211,Saguenay
+Roussillon,QC,162187,Delson
+Greater Sudbury,ON,160376,Greater Sudbury
+Division No. 2,AB,156536,Lethbridge
+Sherbrooke,QC,154601,Sherbrooke
+Thérèse-De Blainville[N 5],QC,154144,Boisbrand
+Frontenac,ON,149738,Kingston
+Francheville,QC,149203,"Trois-Rivières, Saint-Luc-de-Vincennes"
+Les Moulins,QC,148813,Terrebonne
+Nanaimo,BC,146574,Nanaimo
+Thunder Bay,ON,146057,Thunder Bay
+Westmorland,NB,144158,Dorchester
+Vaudreuil-Soulanges,QC,139353,Vaudreuil-Dorion
+Lévis,QC,138769,Lévis
+Brant,ON,136035,Brantford
+Hastings,ON,134934,Belleville
+Peterborough,ON,134933,Peterborough
+Thompson-Nicola,BC,128473,Kamloops
+Lambton,ON,126199,Plympton-Wyoming
+L'Assomption[N 6],QC,119840,L'Assomption
+La Vallée-de-Richelieu,QC,116773,Beloeil
+Algoma District,ON,115870,Sault Ste. Marie
+La Rivière-du-Nord,QC,115165,Saint-Jérôme
+Le Haut-Richelieu,QC,114344,Saint-Jean-sur-Richelieu
+"Stormont, Dundas and Glengarry",ON,111164,Cornwall
+Division No. 19,AB,109712,Grande Prairie
+Haldimand-Norfolk,ON,109118,Haldimand-Norfolk
+Oxford,ON,105719,Woodstock
+Chatham-Kent,ON,104075,Chatham-Kent
+Cape Breton,NS,101619,Sydney
+Renfrew,ON,101326,Pembroke
+Leeds and Grenville,ON,99306,Brockville
+Drummond,QC,98681,Drummondville
+York[N 7],NB,97238,Fredericton
+Deux-Montagnes[N 5],QC,95670,Deux-Montagnes
+Division No. 10,AB,93039,Camrose
+Grey,ON,92568,Owen Sound
+Fraser-Fort George,BC,91879,Prince George
+Elgin,ON,87461,St. Thomas
+Prescott and Russell,ON,85381,L'Orignal
+La Haute-Yamaska[N 8],QC,85042,Granby
+Nipissing,ON,84736,North Bay
+Les Maskoutains,QC,84248,Saint-Hyacinthe
+Division No. 15,SK,83725,Prince Albert
+Northumberland,ON,82126,Cobourg
+North Okanagan,BC,81237,Coldstream
+Cochrane,ON,81122,Timmins
+Okanagan-Similkameen,BC,80742,Penticton
+Cowichan Valley,BC,80332,Duncan
+Division No. 1,AB,78694,Medicine Hat
+Queens,PEI,77866,Charlottetown
+Gloucester,NB,77792,Bathurst
+Saint John,NB,76550,Saint John
+Perth,ON,75112,Stratford
+"Lajemmerais
+in future, Marguerite-D'Youville[N 9]",QC,74416,Verchères
+Kawartha Lakes,ON,73214,Lindsay
+Kings,NB,69665,Hampton
+Arthabaska,QC,69237,Victoriaville
+Division No. 13,AB,68919,Athabasca
+Division No. 16,AB,67516,Fort McMurray
+Bruce,ON,66102,Walkerton
+Lanark,ON,65667,Perth
+Division No. 2,MB,65374,Steinbach
+Division No. 7,MB,64317,Brandon
+Joliette[N 6],QC,63551,Joliette
+Comox Valley[N 10],BC,63538,Courtenay
+Division No. 12,AB,63427,St. Paul
+Cariboo,BC,62392,Williams Lake
+Beauharnois-Salaberry,QC,61950,Beauharnois
+Division No. 17,AB,61504,Slave Lake
+Kings,NS,60589,Kentville
+Peace River,BC,60082,Dawson Creek
+Huron,ON,59100,Goderich
+Central Kootenay,BC,58441,Nelson
+Muskoka,ON,58047,Bracebridge
+Kenora,ON,57607,Kenora
+Dufferin,ON,56881,Orangeville
+East Kootenay,BC,56685,Cranbrook
+Brome-Missisquoi[N 8],QC,55621,Cowansville
+Rimouski-Neigette,QC,55095,Rimouski
+Division No. 5,AB,53263,Drumheller
+Lac-Saint-Jean-Est,QC,52520,Alma
+Division No. 3,MB,51350,Winkler
+Colchester,NS,50968,Truro
+Beauce-Sartignan,QC,50962,Saint-Georges
+"Pierre-De Saurel
+formerly Le Bas-Richelieu",QC,50900,Sorel-Tracy
+Columbia-Shuswap,BC,50512,Salmon Arm
+Shawinigan,QC,50060,Shawinigan
+Matawinie,QC,49516,Rawdon
+Portneuf,QC,49370,Cap-Santé
+Memphrémagog,QC,48551,Magog
+Montcalm,QC,48378,Sainte-Julienne
+Northumberland[N 7],NB,48355,Miramichi
+Lunenburg,NS,47313,Lunenburg
+Division No. 13,MB,46888,Selkirk
+Division No. 7,SK,46648,Moose Jaw
+Les Collines-de-l'Outaouais,QC,46393,Chelsea
+Pictou,NS,45643,Pictou
+Prince,PEI,44348,Summerside
+Division No. 17,SK,44180,Lloydminster
+Strathcona[N 10],BC,43252,Campbell River
+"Les Appalaches
+formerly L'Amiante",QC,43120,Thetford Mines
+La Vallée-de-l'Or,QC,42896,Val-d'Or
+Nord-du-Québec (Jamésie-Nunavik),QC,42579,Chibougamau
+Hants,NS,42304,Windsor
+Parry Sound,ON,42162,Parry Sound
+Mirabel,QC,41957,Mirabel
+Lennox and Addington,ON,41824,Napanee
+D'Autray,QC,41650,Berthierville
+Rouyn-Noranda,QC,41012,Rouyn-Noranda
+Division No. 5,NL,41004,Corner Brook
+Division No. 22,MB,40923,Thompson
+Les Pays-d'en-Haut,QC,40331,Sainte-Adèle
+Division No. 7,AB,40232,Stettler
+Bulkley-Nechako,BC,39208,Burns Lake
+Division No. 3,AB,38566,Fort Macleod
+Squamish-Lillooet,BC,38171,Pemberton
+Division No. 16,SK,37845,North Battleford
+Kitimat-Stikine[N 11],BC,37361,Terrace
+Division No. 6,NL,37304,Grand Falls-Windsor
+Division No. 14,SK,37195,Melfort
+Division No. 8,NL,37121,Lewisporte
+La Jacques-Cartier,QC,36883,Shannon
+Division No. 18,SK,36557,La Ronge
+Maskinongé,QC,36286,Louiseville
+Division No. 15,AB,35983,Banff
+Rouville,QC,35690,Marieville
+Bellechasse,QC,35318,Saint-Lazare-de-Bellechasse
+Division No. 9,SK,35314,Yorkton
+Antoine-Labelle,QC,35159,Mont-Laurier
+La Nouvelle-Beauce,QC,35107,Sainte-Marie
+Division No. 7,NL,34686,Bonavista
+Rivière-du-Loup,QC,34375,Rivière-du-Loup
+Yukon,YT,33897,Whitehorse
+Madawaska,NB,33422,Edmundston
+Timiskaming District,ON,32634,Temiskaming Shores
+Restigouche,NB,32594,Dalhousie
+Argenteuil,QC,32117,Lachute
+Manicouagan,QC,32012,Baie-Comeau
+Division No. 5,SK,32007,Melville
+Le Domaine-du-Roy,QC,31870,Roberval
+Cumberland,NS,31353,Amherst
+Division No. 1,SK,31333,Estevan
+Kootenay Boundary,BC,31138,Trail
+Alberni-Clayoquot,BC,31061,Port Alberni
+Kent,NB,30833,Richibucto
+Division No. 8,SK,29962,Swift Current
+Le Val-Saint-François,QC,29654,Richmond
+Lotbinière,QC,29617,Sainte-Croix
+Albert,NB,28846,Riverview
+Sunshine Coast,BC,28619,Sechelt
+Division No. 14,AB,28584,Edson
+Sunbury,NB,27143,Burton
+Carleton,NB,27019,Woodstock
+Charlotte,NB,26549,St. Andrews
+Les Jardins-de-Napierville,QC,26234,Napierville
+La Côte-de-Beaupré,QC,26172,Château-Richer
+Maria-Chapdelaine,QC,25279,Dolbeau-Mistassini
+Yarmouth,NS,25275,Yarmouth
+Prince Edward County,ON,25258,Picton
+Abitibi,QC,24354,Amos
+Division No. 9,MB,23489,Portage la Prairie
+Division No. 18,MB,23469,Gimli
+L'Érable,QC,23366,Plessisville
+Division No. 12,SK,23228,Battleford
+Division No. 13,SK,23089,Kindersley
+Montmagny,QC,22877,Montmagny
+Nicolet-Yamaska,QC,22798,Nicolet
+Papineau,QC,22541,Papineauville
+Division No. 2,SK,22266,Weyburn
+Le Granit,QC,22259,Lac-Mégantic
+Division No. 17,MB,22208,Dauphin
+Le Haut-Saint-François,QC,22065,Cookshire-Eaton
+Division No. 12,MB,21830,Beausejour
+Matane,QC,21786,Matane
+Division No. 15,MB,21604,Neepawa
+Kamouraska,QC,21492,Saint-Pascal
+Division No. 21,MB,21393,Flin Flon
+Division No. 2,NL,21351,Marystown
+Division No. 9,AB,21290,Rocky Mountain House
+Le Haut-Saint-Laurent,QC,21197,Huntingdon
+Sudbury District[N 12],ON,21196,Espanola
+Abitibi-Ouest,QC,21003,La Sarre
+Division No. 4,NL,20840,Stephenville
+Annapolis,NS,20756,Annapolis Royal
+Témiscouata,QC,20572,Notre-Dame-du-Lac
+La Vallée-de-la-Gatineau,QC,20530,Gracefield
+Rainy River,ON,20370,Fort Frances
+Bécancour,QC,20081,Bécancour
+Victoria,NB,19921,Perth-Andover
+Powell River,BC,19906,Powell River
+Antigonish,NS,19589,Antigonish
+Region 6[N 13],NT,19444,Yellowknife
+Robert-Cliche,QC,19288,Beauceville
+La Mitis,QC,18942,Mont-Joli
+Coaticook,QC,18847,Coaticook
+Skeena-Queen Charlotte,BC,18784,Prince Rupert
+La Matapédia,QC,18573,Amqui
+L'Islet,QC,18517,Saint-Jean-Port-Joli
+Division No. 14,MB,18497,Stonewall
+Digby,NS,18036,Digby
+Bonaventure,QC,18000,New Carlisle
+Kings,PEI,17990,Georgetown
+La Côte-de-Gaspé,QC,17985,Rivière-au-Renard
+Le Rocher-Percé,QC,17979,Chandler
+Inverness,NS,17947,Port Hood
+Division No. 10,SK,17546,Wynyard
+Division No. 1,MB,17331,Lac du Bonnet
+Les Etchemins,QC,17254,Lac-Etchemin
+Division No. 19,MB,17240,Bissett
+Haliburton,ON,17026,Minden
+Baffin,NU,16939,Iqaluit
+Division No. 9,NL,16786,St. Anthony
+Témiscamingue,QC,16425,Ville-Marie
+Division No. 3,NL,16306,Channel-Port aux Basques
+Charlevoix-Est,QC,16240,Clermont
+Acton,QC,15381,Acton Vale
+Avignon,QC,15246,Nouvelle
+La Tuque,QC,15130,La Tuque
+"Les Sources
+formerly Asbestos",QC,14756,Asbestos
+Division No. 18,AB,14534,Grande Cache
+Shelburne,NS,14496,Shelburne
+Pontiac,QC,14358,Campbell's Bay
+Division No. 8,MB,14127,Gladstone
+Charlevoix,QC,13338,Baie-Saint-Paul
+Manitoulin[N 12],ON,13048,Gore Bay
+Mékinac,QC,12924,Saint-Tite
+Division No. 5,MB,12922,Killarney
+Division No. 3,SK,12691,Assiniboia
+La Haute-Gaspésie,QC,12088,Sainte-Anne-des-Monts
+La Haute-Côte-Nord,QC,11546,Les Escoumins
+Mount Waddington,BC,11506,Port McNeill
+Queens,NB,11086,Gagetown
+Queens,NS,10960,Liverpool
+Division No. 4,SK,10879,Maple Creek
+Division No. 10,MB,10673,Sanford
+Division No. 4,AB,10078,Hanna
+Division No. 6,MB,10025,Virden
+Division No. 20,MB,9952,Swan River
+Division No. 16,MB,9928,Roblin
+Division No. 4,MB,9306,Pilot Mound
+Richmond,NS,9293,Arichat
+Les Basques,QC,9142,Trois-Pistoles
+Keewatin,NU,8955,Arviat
+Division No. 23,MB,8590,Churchill
+Guysborough County,NS,8143,Guysborough
+Victoria County,NS,7115,Baddeck
+Region 5[N 13],NT,6907,Hay River
+Region 1[N 13],NT,6712,Inuvik
+Kitikmeot,NU,6012,Cambridge Bay
+Northern Rockies Regional Municipality,BC,5578,Fort Nelson
+Region 4[N 13],NT,3246,Fort Simpson
+Central Coast,BC,3206,Bella Coola
+Region 3[N 13],NT,2812,Behchoko
+Division No. 11,NL,2617,Nain
+Region 2[N 13],NT,2341,Norman Wells
+Stikine,BC,629,Lower Post

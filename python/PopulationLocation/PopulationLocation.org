@@ -1,0 +1,93 @@
+* Population Location (Canada)
+
+** Canadian Population
+The question I have is:  What percentage of the Canadian population lives south of Seattle?
+I can generalize is a little bit to say:  What percentage of the Canadian population lives south of a specific latitude.
+
+At first thought, here are a few things I need:
+- Find a website of Canadian population statistics, probably by city or metro region
+- Find a website that will turn Canadian cities or metro regions into lat/long
+- Scrape the websites to get the lat/long of certain populations
+- Start with Seattle's latitude, and calculate how much of Canada's population is south
+- Also look at Everett, because that might make a difference!
+
+Some notes:
+- For now, I'll be ok with assuming that the entire population of a location resides in the geographical center of that location.  This is, after all, just an estimate.
+
+But before I embark upon this programming challenge, I'll first do the Project Euler scraping project to learn about scraping.
+Then I have to find out about scraping tables in Python, but that will be a part of this project.
+
+Location for census information:
+http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/hlt-fst/pd-pl/Table-Tableau.cfm?LANG=Eng&T=801&S=51&O=A
+
+Note: Some of the locations are listed more than once in the table.  This is for population centers on province borders.  Some of those population centers appear to be separate cities, separated by the border.  Some appear to be a single city, with some living across the border but not in another city.
+Easy to find these locations, as the two subdivisions have a six digit geographic code, the final three of which are the same as the undivided center's geographic code.
+There are only five of these locations, so right now it appears that I should just eliminate those population centers and do those five manually.
+
+Example:
+Mannheim (Ont.)
+
+Once I collect all of the population data, I need to get the lat/long.
+
+Google:
+
+Mannheim (Ont.) Coordinates
+doesn't work
+
+Mannheim, Ontario coordinates
+gives 
+43.4000° N, 80.6500° W
+
+So I can do a google search, and take the results.
+So, I can do a search on wikipedia (without "coordinates") and then find the coordinates on that page.  Sometimes the coordinates need to be converted from degrees to decimal.
+
+There is a website, latlong.net, which appears to have a lot of these locations.
+But it doesn't generate an error if the location doesn't exist.
+If the city doesn't exist, it appears to give the location of the province.  Except in the case of Ontario, which gives the location of Ontario, CA.
+So, I can just compare the returned coordinates with the coordinates of either a garbage location in each province, or just the province name.
+I could also run a test to verify that all coordinates are within a rectange encompassing all of Canada.
+Particularly, I can make sure all coordinates are north of the southernmost Canadian border.
+
+** Run 1 - 6 second sleep between searches
+['Angus - Borden CFB-BFC, Ontario', 'Bridgenorth - Chemong Park Area, Ontario',
+'Campbellton, N.B./Que.', 'Campbellton, New Brunswick part / partie du Nouveau-B
+runswick', 'Campbellton, partie du Qu\xe9bec / Quebec part', 'Flin Flon, Man./Sa
+sk.', 'Flin Flon, Manitoba part / partie de Manitoba', 'Flin Flon, Saskatchewan
+part / partie de la Saskatchewan', 'Hawkesbury, Ont./Que.', 'Hawkesbury, partie
+du Qu\xe9bec / Quebec part', "Hawkesbury, Ontario part / partie de l'Ontario", '
+Lloydminster, Alta./Sask.', 'Lloydminster, Saskatchewan part / partie de la Sask
+atchewan', "Lloydminster, Alberta part / partie de l'Alberta", 'Ottawa - Gatinea
+u, Ont./Que.', 'Ottawa - Gatineau, partie du Qu\xe9bec / Quebec part', "Ottawa -
+ Gatineau, Ontario part / partie de l'Ontario", 'Shilo CFB-BFC, Manitoba', 'Weed
+on Centre, Quebec', 'Kimosom Pwatinahk 203, Deschambault Lake']
+1996514
+North 9179417
+South 12289070
+
+Take a look at other CFB-BFCs, because I think they are all problems
+
+** Run 2 - only a 4 second sleep between searches
+
+['Angus - Borden CFB-BFC, Ontario', 'Bridgenorth - Chemong Park Area, Ontario',
+'Campbellton, N.B./Que.', 'Campbellton, New Brunswick part / partie du Nouveau-B
+runswick', 'Campbellton, partie du Qu\xe9bec / Quebec part', 'Flin Flon, Man./Sa
+sk.', 'Flin Flon, Manitoba part / partie de Manitoba', 'Flin Flon, Saskatchewan
+part / partie de la Saskatchewan', 'Hawkesbury, Ont./Que.', 'Hawkesbury, partie
+du Qu\xe9bec / Quebec part', "Hawkesbury, Ontario part / partie de l'Ontario", '
+Lloydminster, Alta./Sask.', 'Lloydminster, Saskatchewan part / partie de la Sask
+atchewan', "Lloydminster, Alberta part / partie de l'Alberta", 'Ottawa - Gatinea
+u, Ont./Que.', 'Ottawa - Gatineau, partie du Qu\xe9bec / Quebec part', "Ottawa -
+ Gatineau, Ontario part / partie de l'Ontario", 'Shilo CFB-BFC, Manitoba', 'Weed
+on Centre, Quebec', 'Kimosom Pwatinahk 203, Deschambault Lake']
+1996514
+North 9047852
+South 12420635
+
+** Looking at this again
+
+http://en.wikipedia.org/wiki/List_of_census_divisions_of_Canada_by_population
+
+http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/hlt-fst/pd-pl/Table-Tableau.cfm?LANG=Eng&T=701&SR=1&S=0&O=D&RPP=9999&PR=0&CMA=0
+
+The actual census data site is good.
+The wikipedia page has additional information on how to know where these locations are.
