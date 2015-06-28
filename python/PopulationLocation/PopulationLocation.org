@@ -91,3 +91,130 @@ http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/hlt-fst/pd-pl/Table-Tab
 
 The actual census data site is good.
 The wikipedia page has additional information on how to know where these locations are.
+
+** Remembering the code
+
+FindNorthAndSouthPoputions(lat) basically gives the answer.
+
+Let me enter a new function that answers the question:
+What percentage of the population of Canada lives north/south of the given latitude?
+
+Remember, we use the illustrative census subdivision when we don't get a good coordinate from the census division's wikipedia page
+
+Remember, we had to encode text to utf-8 sometimes.  Otherwise the csv writer had problems
+Thérèse-De Blainville
+
+** And for the blog entry!
+
+64% of Canadians Live South of Seattle!
+
+On these long summer days, it's easy to remember that Seattle is REALLY far north.  This time of year, our days are only a few minutes shy of 16 hours long!  That's great, though we pay for it with our long winter nights.
+
+Of course, I'm reminded that we're not SO far north.  I have a few friends in Vancouver, BC, who have a more extreme situation.  But that's Canada.  They're not called the Great White NORTH for nothing (yes, btw, I'm an old SCTV fan).
+
+But wait, are Canadians really "northerners" compared to us?  I mean, I sometimes hear the statistic that 90% of the Canadian population lives within 100 miles of the US border.  Because they love us.  Or because being really far north isn't very fun.  Here's a source:  https://www.cia.gov/library/publications/the-world-factbook/geos/ca.html
+
+And another thing - if you take a good look at a map (preferably a globe), you'll see that a large portion of Eastern Canada isn't that far north at all.  The border takes a big southern dip in the map just east of the Great Lakes that doesn't come back north til the edge of Maine.  That big dip, whatever Candians call it, seems to hold a large portion of Canada's major cities (Toronto, Ottawa, Montreal, Quebec City...).
+
+Show good map here, with circled south canada.
+
+It seemed likely to me that most of the population of Canada lived in that dip, which would incidate that most of the population of Canada actually lives farther south than Seattle!
+
+Note:  On most maps, because of that whole sphericalish nature of Earth, lots of parts of Canada that are south of Seattle actually appear to easily be north of Seattle.  If you look at this map from Wikimedia, It looks like St. John's, way on the east coast of Canada, easily looks to be north of Seattle.  It isn't.  At 47.5675, it is south of Seattle (47.6097).  Quebec, at 46.816667, is also south of Seattle.
+
+Anyway, I wanted to know how many Canadians live south of Seattle.
+
+So I set out to answer that question, programmatically.
+
+My first thought was to find some Canadian census data.  I quickly found an official looking site, and zeroed in on a large list of Canadian population centers with populations of at least 1000 people.  I figured I could take these centers, find their locations, compare them to Seattle, and have my answer!  People living outside of those areas would probably be an insignificant portion of the population (MISTAKE!  My big city biases bit me there).
+
+This solution was a little more interesting than my final solution, so I'll briefly describe it here:  
+Given the spreadsheet of all population centers
+Go through the spreadsheet, feed the population center name into website, extract the lat/lon of that population center.
+(missing population centers needed to be researched manually)
+
+As I mentioned earlier, my big city biases bit me there.  I thought, how much of the population actually lived outside of population centers of 1000 people?  Well, for the 34 million Canadians, around 10 million of them.  Oops.  That seemed like to large a part of the population to not account for in my solution, so I ditched it.
+
+Unlike the United States, Canada doesn't have counties everywhere, at least not calling them 'Counties'.  So that was a no go.
+
+But then I discovered that Canada does have census districts.  200+ of them, and they cover the entire country, and the sum of the populations of all of them was the total population of Canada!  Yay!  So I had all of the population data I needed, and just needed their locations, so I could compare the latitude with Seattle.
+
+The easiest answer came from Wikipedia.  Each census division was listed (their source was the same Canadian census source I was using), but in addition to the data from the census, was a column listing an demonstrative Canadian population center, including a link that typically included the lat/lon of that population center.  So it ended up being more of a generic wikipedia scraping project than a web scraping project.  A little less diverse, but it would give me the answer.  And, Wikipedia can be somewhat standardized, so I was generally able to find the lat/lon programmatically (with a small number of exceptions which I handled manually).
+
+So the code is in Python, and I get all of my information from Wikipedia.  
+
+I realize a few things:
+- There's a margin for error regaring lat/lon.  First off, my program is treating the entire population of a census district (or Seattle) as residing in the exact lat/lon point found.  I didn't think this was too much of a problem, especially when I took a manual look at the populations roughly around the same latitude as Seattle, which accounted for only a few hundred thousand Canadians.    
+
+Pictures:
+Map of the US and Canada, with the portion of Canada south of Seattle circled.
+
+I'd also like to evaluate what percentage of the population lives south of just a few miles north of Vancouver. That's where we get into the 90%+ range.
+
+Actually, that's a decent addendum, a table with cities and % of Canadian population living south of that City.
+Seattle, Everett, NYC, Portland, a Canadian city just north of Vancouver, Vancouver, Minneapolis, North Las Vegas, Fairbanks
+
+So there are probably some people in Grates Cove, NL (latitude 48.1619), counted as being south of Seattle (latitude 47.6097), because they are in NL Division 1, which is listed in Wikipedia as being at 47.55.  I took a look at the divisions close to Seattle's latitude, and none of them are particularly large.  So a few hundred thousand Canadians are close enough to Seattle's latitude that they may incorrectly be counted as south when they are north, or vice versa. I just wanted an estimate anyway.
+
+Other US cities more closely latitudinally related to major Canadian metropolitan areas would have an even greater risk for error.
+
+Bad Map
+http://www.wordtravels.com/Travelguide/Countries/Canada/Map
+
+Wikimedia Bad Map:
+https://upload.wikimedia.org/wikipedia/commons/1/14/Political_map_of_Canada.png
+All the way on the eastern edge of Canada, in Newfoundland, is Saint John's.
+47.5675, it is south of Seattle.
+Quebec 46.816667
+
+Good map
+http://www.excelimmigrations.com/web_images/canada_map.jpg
+
+It's tough to even find a map that accurately shows that Quebec City is south of Seattle.
+Seattle, WA 47.6097 64.18
+Portland, OR 45.5200 40.54
+Portland, ME 43.6667 14.42
+Augusta, ME 44.3235 28.63
+Madawaska, ME 47.307186 62.89
+Minneapolis, MN 44.9778 33.78
+Everett, WA 47.9633 64.82
+Blaine, WA 48.9881 68.71
+Fargo, ND 46.8772 62.17
+Detroit, MI 42.3314 1.16
+Chicago, IL 41.8369 0.00
+
+Sorry, 171 residents of Pelee Island, I know you're south of Chicago, but your census district representative location isn't!
+
+*** How I did it
+
+First, I tried Webdriver.  In my first iteration of this problem, I'd tried to use a website, findlatitudeandlongitude.com, to get the lat/lon coordinates of the population centers I was considering.  This required inputting the name of the city into the form, submitting the info, and then retrieving the lat/lon. That was mostly fine.  Occasionally I couldn't find a population center there, so I'd have to find it elsewhere, but that was the only problem.  
+When I discovered that using population centers missed 10 million of Canada's 33+ million people, I found the Census Districts, and that led me to Wikipedia.  There, most of the Census District pages included a lat/lon, and I decided that was representative enough for my estimation needs.
+I no longer needed to manipulate forms, so I switched to mechanize and BeautifulSoup.
+
+GetCanadaCensusInfoFromWikipedia:
+
+Mechanize gives you a browser-like object to use to interact with web pages.
+I opened up the Canada Census Division page on Wikipedia, and put it through BeautifulSoup, which allowed me to more easily parse through the data.
+
+Here put the first few lines.
+
+Once I grabbed the table, I quickly went through each row, extracting the information I needed from each Census Division - name, population, and location.
+
+Show the first few lines of the for loop, til it grabs column2
+
+Actually, location was a little more involved.  In the table, each division's name had a link to that division's own wikipedia page.  Often, those pages had a lat/long for that division.  
+
+Show GetCoordinatesFromWikipediaPage
+
+When it didn't, I had to go back to the main page's table and look at the column for the Illustrative census subdivision, and look at that page for a lat/long.  That was successful, except for Quebec City, which is a weird kind of census division for some reason.  I ended up getting the lat/long for that manually.
+
+Once I retrieved a census division's data, I stuck it in a list. And I put that list in a list of lists that represented all off the census division. That, I output to a csv file.
+
+Show the writing to the outfile
+
+
+And that was the end of my webwork.  To calculate what percentage of Canada's population lives south of Seattle, I took Seattle's latitude (47.6097), and ran it against the latitudes in my csv file, tallying the populations of divisions greater than and less than my latitude.  My answer?  64.18% of Canada's population (21,486,482 people) live south of Seattle, according to the 2011 census.  Take that, my southerner friends (most of you Canadians).
+
+show FindNorthAndSouthPopulations
+show FindPercentageOfCanadaPopulation
+

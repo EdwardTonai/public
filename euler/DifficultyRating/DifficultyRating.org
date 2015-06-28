@@ -23,3 +23,10 @@ Things I'd like to improve:
 4 - Graceful error handling
 
 I might fix #1 and #2, because I don't know how to do those things and I'd like to.  As for the rest, they wouldn't be too difficult to complete but this is just a little script to find the difficulty info I wanted.
+Again, related to #1 (secure password passing), I like how PowerShell handles credential objects.   
+
+
+Things I learned:
+1 - Submitting Forms with Mechanize
+Pretty easy, though 
+2 - Programmatically navigating web pages with BeautifulSoup
